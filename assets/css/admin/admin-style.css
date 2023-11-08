@@ -1,0 +1,38 @@
+.element-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.element-wrapper input , .element-wrapper select {
+    border: 1px solid #efefef;
+    height: 46px;
+    width: 400px;
+}
+
+.element-wrapper label {
+    margin: 16px 0;
+    font-weight: bold;
+}
+
+.display-type label{
+    margin-left: 20px ;
+}
+
+.display-type input{
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.display-type input + img{
+    cursor: pointer;
+}
+
+.display-type input:checked + img{
+    box-shadow: 0 0 6px 3px #aaaa;
+}
+
+.rp-wrapper .form-table th[scope=row]{
+    display: none;
+}
