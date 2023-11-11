@@ -25,14 +25,32 @@
     opacity: 0;
 }
 
-.display-type input + img{
-    cursor: pointer;
-}
-
-.display-type input:checked + img{
-    box-shadow: 0 0 6px 3px #aaaa;
-}
-
 .rp-wrapper .form-table th[scope=row]{
+    display: none;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group div{
+    display: flex;
+    align-items: center;
+}
+
+.input-group div output{
+    margin-right: 10px;
+    background-color: #efefef;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.label-group{
+    margin-top: 30px !important;
+    margin-bottom: 5px !important;
+}
+
+.fixed-position-option{
     display: none;
 }

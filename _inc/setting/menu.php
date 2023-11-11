@@ -1,11 +1,11 @@
 <?php
 function wp_ls_register_menu()
 {
-    add_menu_page(
-        'تنظیمات پلاگین مطالب مرتبط',
-        'مطالب مرتبط',
+    add_options_page(
+        'تنظیمات پلاگین لایک مطالب',
+        'لایک مطالب',
         'manage_options',
-        'related-post-setting',
+        'like-post-setting',
         'wp_ls_like_post_admin_layout',
 
     );

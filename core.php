@@ -22,10 +22,10 @@ function wp_ls_register_assets()
     wp_enqueue_style('ls-style');
 
     // script
+    wp_enqueue_script('ls-ajax-js', LS_PLUGIN_URL . '/assets/js/front/ajax.js', ['jquery'], '1.0.0', true);
+
     wp_register_script('toast-js', LS_PLUGIN_URL . '/assets/js/front/jquery.toast.js', ['jquery'], '1.0.0', true);
     wp_enqueue_script('toast-js');
-
-    wp_enqueue_script('ls-ajax-js', LS_PLUGIN_URL . '/assets/js/front/ajax.js', ['jquery'], '1.0.0', true);
 
     wp_register_script('ls-main-js', LS_PLUGIN_URL . '/assets/js/front/main.js', ['jquery'], '1.0.0', true);
     wp_enqueue_script('ls-main-js');
@@ -40,11 +40,11 @@ function wp_ls_register_assets()
 function wp_ls_register_assets_admin()
 {
     // css
-    wp_register_style('ls-admin-style',LS_PLUGIN_URL . '/assets/css/admin/admin-style.css', '', '1.0.0');
+    wp_register_style('ls-admin-style', LS_PLUGIN_URL . '/assets/css/admin/admin-style.css', '', '1.0.0');
     wp_enqueue_style('ls-admin-style');
 
     // js
-    wp_register_script('ls-admin-js', LS_PLUGIN_URL . '/assets/js/front/admin.js', ['jquery'], '1.0.0', true);
+    wp_register_script('ls-admin-js', LS_PLUGIN_URL . '/assets/js/admin/admin-js.js', ['jquery'], '1.0.0', true);
     wp_enqueue_script('ls-admin-js');
 };
 
@@ -52,8 +52,10 @@ add_action('wp_enqueue_scripts', 'wp_ls_register_assets');
 add_action('admin_enqueue_scripts', 'wp_ls_register_assets_admin');
 
 // Inc files
-// include_once LS_PLUGIN_DIR . 'view/front/related-posts.php';
-// include_once LS_PLUGIN_DIR . '_inc/setting/menu.php';
+include_once LS_PLUGIN_DIR . '/view/front/like.php';
+include_once LS_PLUGIN_DIR . '_inc/like/like-post.php';
+include_once LS_PLUGIN_DIR . '_inc/like/unlike-post.php';
+include_once LS_PLUGIN_DIR . '_inc/setting/menu.php';
 
 register_activation_hook(__FILE__, 'wp_ls_set_setting');
 register_deactivation_hook(__FILE__, 'wp_ls_delete_setting');
